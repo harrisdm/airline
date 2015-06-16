@@ -6,7 +6,7 @@ Plane.destroy_all
 User.destroy_all
 
 
-p1 = Plane.create :name => 'Brittish Airways', :aisle => 5, :seat => 6
+p1 = Plane.create :name => 'British Airways', :aisle => 5, :seat => 6
 p2 = Plane.create :name => 'Singapore Airlines', :aisle => 5, :seat => 6
 p3 = Plane.create :name => 'Qantas', :aisle => 5, :seat => 6
 p4 = Plane.create :name => 'Jetstar', :aisle => 5, :seat => 6
@@ -39,6 +39,8 @@ b8 = Booking.create :aisle => 2, :seat => 3
 b9 = Booking.create :aisle => 2, :seat => 4
 b10 = Booking.create :aisle => 1, :seat => 3
 
+u1 = User.create :name => "Tom", :email => "1@test.com"
+u2 = User.create :name => "Harry", :email => "2@test.com"
 
 f1.plane_id = p1.id
 f2.plane_id = p2.id
@@ -51,6 +53,17 @@ f8.plane_id = p2.id
 f9.plane_id = p3.id
 f10.plane_id = p1.id
 
+f1.save()
+f2.save()
+f3.save()
+f4.save()
+f5.save()
+f6.save()
+f7.save()
+f8.save()
+f9.save()
+f10.save()
+
 b1.flight_id = f1.id
 b2.flight_id = f2.id
 b3.flight_id = f1.id
@@ -61,6 +74,28 @@ b7.flight_id = f3.id
 b8.flight_id = f4.id
 b9.flight_id = f1.id
 b10.flight_id = f2.id
+
+b1.user_id = 1
+b2.user_id = 2
+b3.user_id = 1
+b4.user_id = 2
+b5.user_id = 1
+b6.user_id = 2
+b7.user_id = 1
+b8.user_id = 2
+b9.user_id = 1
+b10.user_id = 2
+
+b1.save()
+b2.save()
+b3.save()
+b4.save()
+b5.save()
+b6.save()
+b7.save()
+b8.save()
+b9.save()
+b10.save()
 
 
 

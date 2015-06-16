@@ -1,0 +1,29 @@
+<h1>App#index</h1>
+<p>Find me in app/views/app/index.html.erb</p>
+
+
+<div id="main"></div>
+
+
+<script id="appTemplate" type="template/html">
+  <h2>Flights</h2>
+  <table id="flights">
+    <tr>
+      <th>Date</th>
+      <th>Flight No</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Plane</th>
+      <th></th>
+    </tr>
+  </table>
+</script>
+
+<script id="flightListTemplate" type="template/html">
+  <td>{{ date }}</td>
+  <td>{{ name }}</td>
+  <td>{{ origin }}</td>
+  <td>{{ destination }}</td>
+  <td>{{ plane_id.name }}</td>
+  <td><a href="/#app/flights/{{ id }}">Find Seats</a></td>
+</script>

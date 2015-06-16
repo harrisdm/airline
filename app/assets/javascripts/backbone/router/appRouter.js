@@ -9,8 +9,11 @@ app.AppRouter = Backbone.Router.extend({
 
   // GET /
   index: function () {
-    var appView = new app.AppView({collection: app.flightList});
-    appView.render();
+    // Filter the flightList to future flights only
+    filteredList = app.flightList.upcoming();
+
+    var FlightListView = new app.FlightListView({collection: filteredList});
+    FlightListView.render();
   }
 
 });

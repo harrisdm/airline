@@ -5,9 +5,15 @@
 <div id="main"></div>
 
 
-<script id="appTemplate" type="template/html">
+
+<script id="flightListTemplate" type="template/html">
   <h2>Flights</h2>
-  <table id="flights">
+  <div id="search-bar">
+    Search: 
+    <input type="text" id="origin" placeholder="From">
+    <input type="text" id="destination" placeholder="To">
+  </div>
+  <table>
     <tr>
       <th>Date</th>
       <th>Flight No</th>
@@ -16,10 +22,12 @@
       <th>Plane</th>
       <th></th>
     </tr>
+    <tbody id="flights">
+    </tbody>
   </table>
 </script>
 
-<script id="flightListTemplate" type="template/html">
+<script id="flightListItemTemplate" type="template/html">
   <td>{{ date }}</td>
   <td>{{ name }}</td>
   <td>{{ origin }}</td>

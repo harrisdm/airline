@@ -1,6 +1,6 @@
 var app = app || {};
 
-// Collection of a particular model
+// Collection of flight models
 app.Flights = Backbone.Collection.extend({
   model: app.Flight,
   url: "/flights",
@@ -34,4 +34,4 @@ app.Flights = Backbone.Collection.extend({
     return new app.Flights(matches);
   }
 
-})
+});

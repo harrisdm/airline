@@ -14,14 +14,16 @@
     <input type="text" id="destination" placeholder="To">
   </div>
   <table>
-    <tr>
-      <th>Date</th>
-      <th>Flight No</th>
-      <th>From</th>
-      <th>To</th>
-      <th>Plane</th>
-      <th></th>
-    </tr>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Flight No</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Plane</th>
+        <th></th>
+      </tr>
+    </thead>
     <tbody id="flights">
     </tbody>
   </table>
@@ -34,4 +36,12 @@
   <td>{{ destination }}</td>
   <td>{{ plane_id.name }}</td>
   <td><a href="/#app/flights/{{ id }}">Find Seats</a></td>
+</script>
+
+
+<script id="seatBookingTemplate" type="template/html">
+<table>
+  <thead id="seat-nums"></thead>
+  <tbody id="seat_aisles"></tbody>
+</table>
 </script>

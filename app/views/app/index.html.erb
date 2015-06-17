@@ -38,13 +38,15 @@
 </script>
 
 
-<script id="seatBookingTemplate" type="template/html">
+<script id="seatListTemplate" type="template/html">
+<h2>Seating</h2>
 <table>
   <thead id="seat-nums"></thead>
-  <tbody id="seat_aisles"></tbody>
+  <tbody id="seat-aisles"></tbody>
 </table>
 </script>
 
 
 <!-- added the javascript code here so that the scripts are only loaded when backbone app is being used - Basically providing scope  -->
 <%= javascript_include_tag 'application' %>
+

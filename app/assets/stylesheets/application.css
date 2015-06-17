@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  margin-top: 100px;
+}
+
+.container > .navbar-header {
+  height: 55px;
+
+}
+
+#page-content-wrapper {
+  padding-top: 50px;
+}
+
+input {
+  height: auto !important;
+}
+
+.form-signin-heading{
+
+}

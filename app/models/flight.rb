@@ -17,4 +17,9 @@ class Flight < ActiveRecord::Base
   has_many :bookings
   belongs_to :plane
 
+  validates :name, :presence => true
+  validates :date, :presence => true
+  validates :origin, :presence => true
+  validates :destination, :presence => true
+
 end

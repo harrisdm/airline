@@ -13,8 +13,8 @@
 class Plane < ActiveRecord::Base
 
   belongs_to :flight
-  validates :seat :numericality => { :greater_than => 0}
-  validates :seat :numericality => { :less_than_or_equal_to => 6}
-  validates :aisle :numericality => {:greater_than => 0}
-  validates :aisle :numericality => { :less_than_or_equal_to => 20}
+  validates :seat, :numericality => { :greater_than => 0}
+  validates :seat, :numericality => { :less_than_or_equal_to => 6}
+  validates :aisle, :numericality => {:greater_than => 0}
+  validates :aisle, :numericality => { :less_than_or_equal_to => 20}
 end

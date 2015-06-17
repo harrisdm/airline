@@ -8,11 +8,7 @@
 #  password_digest :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-<<<<<<< HEAD
-=======
 #  admin           :boolean          default(FALSE)
->>>>>>> airline
-#
 
 class User < ActiveRecord::Base
 

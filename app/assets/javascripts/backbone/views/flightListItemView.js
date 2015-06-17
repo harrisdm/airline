@@ -6,7 +6,6 @@ app.FlightListItemView = Backbone.View.extend({
   render: function () {
     var flightListTemplate = $('#flightListItemTemplate').html();
     var flightListHTML = _.template(flightListTemplate);
-
     this.$el.html( flightListHTML( this.model.toJSON() ) );
 
     $('#flights').append(this.$el);

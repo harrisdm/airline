@@ -22,9 +22,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    
       @user = @current_user
-     # @user = User.find(params[:id])
   end
 
   # POST /users
@@ -43,6 +41,8 @@ class UsersController < ApplicationController
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+
+
     end
   end
 
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     user = @current_user
     respond_to do |format|
       if user.update(user_params)
-        format.html { redirect_to root_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to user_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: root_path }
       else
         format.html { render :edit }
@@ -86,6 +86,7 @@ class UsersController < ApplicationController
    # Confirms a logged-in user.
     def logged_in_user
       unless logged_in?
+         store_location
         flash[:danger] = "Please log in."
         redirect_to login_path
       end

@@ -6,7 +6,8 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:session][:email].downcase
     if user.present? && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to user
+      redirect_back_or "/app"
+      # redirect_to "/app"
     else
       flash.now[:notice] = "Invalid login ,please try again ."
       redirect_to login_path

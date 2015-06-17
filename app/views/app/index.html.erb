@@ -1,5 +1,4 @@
 <h1>App#index</h1>
-<p>Find me in app/views/app/index.html.erb</p>
 
 
 <div id="main"></div>
@@ -45,3 +44,7 @@
   <tbody id="seat_aisles"></tbody>
 </table>
 </script>
+
+
+<!-- added the javascript code here so that the scripts are only loaded when backbone app is being used - Basically providing scope  -->
+<%= javascript_include_tag 'application' %>

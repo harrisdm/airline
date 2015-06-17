@@ -8,7 +8,7 @@ app.SeatListView = Backbone.View.extend({
     var seatListTemplate = $('#seatListTemplate').html();
     this.$el.html(seatListTemplate);
 
-    console.log("collection", this.collection);
+    //console.log("collection", this.collection);
     var plane = this.collection;
 
     this.buildHeader(plane);
@@ -34,7 +34,7 @@ app.SeatListView = Backbone.View.extend({
   buildAisle: function(plane, i) {
     var $row = $("<tr/>").append($("<th/>").html(i+1));
     for(var j=0; j<plane.get("seat"); j++) {
-      $row.append( $("<td/>").html("seat") );
+      $row.append( $("<td id='" + i + "-" + j + "' />").html("seat") );
     }
     $("#seat-aisles").append( $row.append( $("<th/>").html(i+1) ) );
   }

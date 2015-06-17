@@ -27,10 +27,17 @@ app.AppRouter = Backbone.Router.extend({
     
     planes.fetch().done(function() {
       var plane = planes.get(id);
+      var aisle = plane.get("aisle");
+      var seat = plane.get("seat");
       console.log("Plane:", plane);
+      console.log("aisle:", aisle);
+      console.log("seat:", seat);
+      var SeatListView = new app.SeatListView({collection: plane});
+      SeatListView.render();
     });
 
     // FOUND THE PLANE FOR THIS FLIGHT!!
+
   }
 
 });

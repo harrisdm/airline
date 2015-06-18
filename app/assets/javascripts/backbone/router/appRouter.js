@@ -18,45 +18,38 @@ app.AppRouter = Backbone.Router.extend({
   },
 
   selectSeat: function (id) {
-
-    //console.log("Seat Selection Page");
-    var flight = app.flightList.get(id);
     app.flight = app.flightList.get(id);
 
     // Find the plane for this flight to draw the seating plan
-    plane_id = flight.get("plane_id");
-    //console.log("Plane ID:", plane_id);
-
-    var planes = new app.Planes();
-    planes.fetch().done(function() {
-      var plane = planes.get(id);
-      var aisle = plane.get("aisle");
-      var seat = plane.get("seat");
-      // console.log("Plane:", plane);
-      // console.log("aisle:", aisle);
-      // console.log("seat:", seat);
-
-      // Display the seating plan
-      var SeatListView = new app.SeatListView({collection: plane});
-      SeatListView.render();
+    plane_id = app.flight.get("plane_id");
+    var temp = this;
+    app.allPlanes = new app.Planes();
+    app.allPlanes.fetch().done(function() {
+      app.plane = app.allPlanes.get(plane_id);
+      temp.showSeating();
+      temp.alreadyBooked();
     });
+  },
 
+  showSeating: function() {
+    // Display the seating plan
+    var SeatListView = new app.SeatListView({collection: app.plane});
+    SeatListView.render();
+  },
+
+  alreadyBooked: function() {
     // Find the bookings for this flight
-    var bookings = new app.Bookings();
-    bookings.fetch().done(function() {
-      //console.log("Bookings:",bookings);
-      bookings.each( function(booking) {
+    app.currentBookings = new app.Bookings();
+    app.currentBookings.fetch().done(function() {
+      console.log("Bookings:",app.currentBookings);
 
-        var aisle = booking.get("aisle")
-        var seat = booking.get("seat")
-        //console.log("aisle:", aisle);
-        //console.log("seat:", seat);
-
-        $("#"+ aisle + "-" + seat).html("xxx");
+      app.currentBookings.each( function(booking) {
+        var aisle = booking.get("aisle");
+        var seat = booking.get("seat");
+        $("#"+ aisle + "-" + seat).addClass('seat-booked');
       });
     });
-    
-
   }
+
 
 });

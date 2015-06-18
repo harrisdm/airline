@@ -1,8 +1,7 @@
-<h1>App#index</h1>
 
-
-<div id="main"></div>
-
+<div class="container">
+  <div id="main"></div>
+</div>
 
 
 <script id="flightListTemplate" type="template/html">
@@ -12,14 +11,13 @@
     <input type="text" id="origin" placeholder="From">
     <input type="text" id="destination" placeholder="To">
   </div>
-  <table>
+  <table class="table">
     <thead>
       <tr>
         <th>Date</th>
         <th>Flight No</th>
         <th>From</th>
         <th>To</th>
-        <th>Plane</th>
         <th></th>
       </tr>
     </thead>
@@ -33,17 +31,28 @@
   <td>{{ name }}</td>
   <td>{{ origin }}</td>
   <td>{{ destination }}</td>
-  <td>{{ plane_id.name }}</td>
   <td><a href="app/#flights/{{ id }}">Find Seats</a></td>
 </script>
 
 
 <script id="seatListTemplate" type="template/html">
-<h2>Seating</h2>
-<table>
+<h2>Choose Your Seat:</h2>
+<div class="row">
+<div class="col-sm-6">
+<table id="plane">
   <thead id="seat-nums"></thead>
   <tbody id="seat-aisles"></tbody>
 </table>
+</div>
+<div class="col-sm-4">
+<table class="table">
+<tr><th>Flight</th><td></td></tr
+<tr><th>Date</th><td></td></tr>
+<tr><th>From</th><td></td></tr>
+<tr><th>To</th><td></td></tr>
+</table>
+</div>
+<div class="col-sm-2"></div>
 </script>
 
 

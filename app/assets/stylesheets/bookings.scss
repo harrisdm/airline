@@ -1,3 +1,43 @@
 // Place all the styles related to the Bookings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+td.seat {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.seat-open {
+  background-color: linen;
+  border: 2px solid grey;
+}
+
+.seat-selected{
+  background-color: lightGreen;
+  border: 2px solid green;
+}
+
+.seat-booked{
+  background-color: pink;
+  border: 2px solid red;
+}
+
+#search-bar, #seat-aisles tr th, #seat-nums tr th {
+  text-align: center;
+  font-weight: bold;
+}
+
+#search-bar input {
+  padding: 5px;
+  margin: 10px;
+}
+
+#plane {
+  border-collapse:separate;
+  border-spacing:5px 5px;
+  background-color: lightGrey;
+  padding: 10px 5px;
+  border: 1px solid grey;
+  margin: auto;
+}

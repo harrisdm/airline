@@ -45,8 +45,8 @@ Rails.application.routes.draw do
 
   get '/app' => 'app#index'
 
-   # root :to => 'app#index'
-   root :to => 'session#new'
+    root :to => 'app#index'
+   #root :to => 'session#new'
 
   resources :planes
   resources :flights do
